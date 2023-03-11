@@ -3,53 +3,24 @@ const currencySelector = document.querySelector("#currencySelector");
 const currencyButton = document.querySelector("#currencyButton");
 const comeout = document.querySelector("#comeout");
 
-const euroApi = "http://api.nbp.pl/api/exchangerates/rates/a/eur/?format=json";
-const usdApi = "http://api.nbp.pl/api/exchangerates/rates/a/usd/?format=json";
-const chfApi = "http://api.nbp.pl/api/exchangerates/rates/a/chf/?format=json";
-
-let chosenCurrencyRate
-
-
-const chooseCurrency = (event) => {
-    if (event.target.value == "EUR") {
-        fetch(euroApi)
-        .then((response) => response.json())
-        .then((json) => {
-            const chosenCurrencyRate = json.rates[0].mid;
-            console.log(chosenCurrencyRate);
-            return chosenCurrencyRate;
-        })
-        .catch(() => alert("Coś poszło nie tak"));
-    } else if (event.target.value == "USD") {
-        fetch(usdApi)
-        .then((response) => response.json())
-        .then((json) => {
-            const chosenCurrencyRate = json.rates[0].mid;
-            console.log(chosenCurrencyRate);
-            return chosenCurrencyRate;
-        })
-        .catch(() => alert("Coś poszło nie tak"));
-    } else if (currencySelector.value == "CHF") {
-        fetch(chfApi)
-        .then((response) => response.json())
-        .then((json) => {
-            const chosenCurrencyRate = json.rates[0].mid;
-            console.log(chosenCurrencyRate);
-            return chosenCurrencyRate;
-        })
-        .catch(() => alert("Coś poszło nie tak"));
-    } else {
-    alert("Coś poszło nie tak");
-    }
+const chooseCurrency = async (event) => {
+    let chosenCurrencyRate;
+    const response = await fetch(`http://api.nbp.pl/api/exchangerates/rates/a/${event.target.value}/?format=json`)
+    const finalResponse = await response.json();
+    chosenCurrencyRate = await finalResponse.rates[0].mid;
     console.log(chosenCurrencyRate);
-    return chosenCurrencyRate;
+    return newFunction(chosenCurrencyRate);
 };
-
+const newFunction = (parametr) => {
+    const currencyRate = parametr;
+    return currencyRate;
+};
+console.log(currencyRate);
 const getComeout = () => {
-     const usersValue = valueInput.value;
-     const finalValue = usersValue * chosenCurrencyRate;
+     const finalValue = (valueInput.value * currencyRate).toFixed(2)
      comeout.innerHTML = finalValue;
 };
 
 currencySelector.addEventListener("change", chooseCurrency);
 currencyButton.addEventListener("click", getComeout);
+console.log(currencyRate);
