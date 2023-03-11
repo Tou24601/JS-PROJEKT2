@@ -10,15 +10,21 @@ const chooseCurrency = async (event) => {
     );
     const finalResponse = await response.json();
     const chosenCurrencyRate = await finalResponse.rates[0].mid;
-    currencyButton.addEventListener("click", () => getComeout(chosenCurrencyRate));
+    currencyButton.addEventListener("click", () =>
+      getComeout(chosenCurrencyRate)
+    );
   } catch (err) {
     console.log(err);
   }
 };
 
 const getComeout = (chosenCurrencyRate) => {
-  const finalValue = (valueInput.value * chosenCurrencyRate).toFixed(2);
-  comeout.innerHTML = finalValue;
+  if (valueInput.value > 0) {
+    const finalValue = (valueInput.value * chosenCurrencyRate).toFixed(2);
+    comeout.innerHTML = finalValue;
+  } else {
+    alert("Wpisz poprawną kwotę");
+  }
 };
 
 currencySelector.addEventListener("change", chooseCurrency);
