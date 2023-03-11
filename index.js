@@ -6,7 +6,7 @@ const comeout = document.querySelector("#comeout");
 const chooseCurrency = async (event) => {
   try {
     const response = await fetch(
-      `http://api.nbp.pl/api/exchangerates/rates/a/${event.target.value}/?format=json`
+      `https://api.nbp.pl/api/exchangerates/rates/a/${event.target.value}/?format=json`
     );
     const finalResponse = await response.json();
     const chosenCurrencyRate = await finalResponse.rates[0].mid;
