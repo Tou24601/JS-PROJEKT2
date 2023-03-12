@@ -4,6 +4,7 @@ const currencyButton = document.querySelector("#currencyButton");
 const comeout = document.querySelector("#comeout");
 
 const chooseCurrency = async (event) => {
+  document.body.setAttribute("style", "cursor: progress");
   try {
     const response = await fetch(
       `https://api.nbp.pl/api/exchangerates/rates/a/${event.target.value}/?format=json`
@@ -16,6 +17,7 @@ const chooseCurrency = async (event) => {
   } catch (err) {
     console.log(err);
   }
+  document.body.setAttribute("style", "cursor: default");
 };
 
 const getComeout = (chosenCurrencyRate) => {
