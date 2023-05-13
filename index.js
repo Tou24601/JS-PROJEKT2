@@ -1,3 +1,5 @@
+ "use strict"
+
 const valueInput = document.querySelector("#valueInput");
 const currencySelector = document.querySelector("#currencySelector");
 const currencyButton = document.querySelector("#currencyButton");
