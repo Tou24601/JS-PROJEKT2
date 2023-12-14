@@ -23,7 +23,7 @@ const chooseCurrency = async (event) => {
 };
 
 const getComeout = (chosenCurrencyRate) => {
-  if (valueInput.value > 0) {
+  if (valueInput.value > 0 && chosenCurrencyRate == true) {
     const finalValue = (valueInput.value * chosenCurrencyRate).toFixed(2);
     comeout.innerHTML = finalValue;
   } else {
