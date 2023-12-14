@@ -26,7 +26,9 @@ const getComeout = (chosenCurrencyRate) => {
   if (valueInput.value > 0 && chosenCurrencyRate == true) {
     const finalValue = (valueInput.value * chosenCurrencyRate).toFixed(2);
     comeout.innerHTML = finalValue;
-  } else {
+  }  else if (valueInput.value > 0 && chosenCurrencyRate == false) {
+   alert("Wybierz walutę");
+  }  else {
     alert("Wpisz poprawną kwotę");
   }
 };
