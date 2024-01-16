@@ -29,7 +29,7 @@ const getComeout = (chosenCurrencyRate) => {
     comeout.innerHTML = finalValue;
   }  else if (valueInput.value > 0 && chosenCurrencyRate == false) {
    alert("Wybierz walutę");
-  } else if (valueInput.value !> 0 && chosenCurrencyRate == false) {
+  } else if (valueInput.value < 0 && chosenCurrencyRate == false) {
    alert("Wpisz poprawną kwotę");
   } else {
     alert("Wybierz walutę i wpisz poprawną kwotę");
