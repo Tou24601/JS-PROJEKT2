@@ -16,6 +16,7 @@ const chooseCurrency = async (event) => {
     currencyButton.addEventListener("click", () =>
       getComeout(chosenCurrencyRate)
     );
+   console.log(chosenCurrencyRate, "fetching work")
   } catch (err) {
     console.log(err);
   }
