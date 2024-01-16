@@ -24,15 +24,18 @@ const chooseCurrency = async (event) => {
 
 const getComeout = (chosenCurrencyRate) => {
   if (valueInput.value > 0 && chosenCurrencyRate == true) {
+   console.log(valueInput.value, chosenCurrencyRate, "if")
     const finalValue = (valueInput.value * chosenCurrencyRate).toFixed(2);
     comeout.innerHTML = finalValue;
   }  else if (chosenCurrencyRate == false) {
+   console.log(valueInput.value, chosenCurrencyRate, "waluta")
    alert("Wybierz walutę");
   } else if (valueInput.value < 0) {
+   "kwota"
    alert("Wpisz poprawną kwotę");
   } else {
     alert("Wybierz walutę i wpisz poprawną kwotę");
-   console.log(valueInput.value, chosenCurrencyRate)
+   console.log("dół")
   }
 };
 
