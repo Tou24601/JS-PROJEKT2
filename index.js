@@ -33,7 +33,7 @@ const getComeout = (chosenCurrencyRate) => {
   }  else if (chosenCurrencyRate == false) {
    console.log(valueInput.value, chosenCurrencyRate, "waluta")
    alert("Wybierz walutę");
-  } else if (valueInput.value !> 0) {
+  } else if (0 > valueInput.value) {
    alert("Wpisz poprawną kwotę");
   } else {
     alert("Wybierz walutę i wpisz poprawną kwotę");
