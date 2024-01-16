@@ -13,6 +13,7 @@ const chooseCurrency = async (event) => {
     );
     const finalResponse = await response.json();
     const chosenCurrencyRate = await finalResponse.rates[0].mid;
+   console.log(chosenCurrencyRate)
     currencyButton.addEventListener("click", () =>
       getComeout(chosenCurrencyRate)
     );
