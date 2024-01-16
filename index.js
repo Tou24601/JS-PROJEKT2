@@ -24,6 +24,10 @@ const chooseCurrency = async (event) => {
 
 const getComeout = (chosenCurrencyRate) => {
  console.log(valueInput.value, chosenCurrencyRate)
+
+ if (chosenCurrencyRate == true) {
+  console.log("hello")
+ }
  const finalValue = (valueInput.value * chosenCurrencyRate).toFixed(2);
     comeout.innerHTML = finalValue;
   if (valueInput.value > 0 && chosenCurrencyRate == true) {
