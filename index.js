@@ -27,7 +27,7 @@ const getComeout = (chosenCurrencyRate) => {
 
  if (chosenCurrencyRate == true) {
   console.log("hello")
- } else if (valueInput.value < 0) {
+ } else if (valueInput.value < 0 || valueInput.value > 0) {
   console.log(valueInput.value)
  }
  const finalValue = (valueInput.value * chosenCurrencyRate).toFixed(2);
