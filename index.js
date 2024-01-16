@@ -13,10 +13,10 @@ const chooseCurrency = async (event) => {
     );
     const finalResponse = await response.json();
     const chosenCurrencyRate = await finalResponse.rates[0].mid;
+   console.log("bez clicku")
     currencyButton.addEventListener("click", () =>
       getComeout(chosenCurrencyRate)
     );
-   console.log(chosenCurrencyRate, "fetching work")
   } catch (err) {
     console.log(err);
   }
