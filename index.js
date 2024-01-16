@@ -25,7 +25,7 @@ const chooseCurrency = async (event) => {
 const getComeout = (chosenCurrencyRate) => {
  console.log(valueInput.value, chosenCurrencyRate)
 
- if (chosenCurrencyRate == true) {
+ if (chosenCurrencyRate == false) {
   console.log("hello")
  } else if (valueInput.value < 0 || valueInput.value > 0) {
   console.log(valueInput.value)
