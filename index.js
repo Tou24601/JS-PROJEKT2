@@ -7,6 +7,7 @@ const comeout = document.querySelector("#comeout");
 
 const chooseCurrency = async (event) => {
   document.body.setAttribute("style", "cursor: progress");
+ console.log(event.target.value)
   try {
     const response = await fetch(
       `https://api.nbp.pl/api/exchangerates/rates/a/${event.target.value}/?format=json`
