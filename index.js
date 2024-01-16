@@ -23,16 +23,17 @@ const chooseCurrency = async (event) => {
 };
 
 const getComeout = (chosenCurrencyRate) => {
- console.log(valueInput.value, chosenCurrencyRate)
+const finalValue = (valueInput.value * chosenCurrencyRate).toFixed(2);
+    comeout.innerHTML = finalValue;
 
- if (chosenCurrencyRate == false) {
+ /*if (chosenCurrencyRate == false) {
   console.log("hello")
  } else if (valueInput.value < 0 || valueInput.value > 0) {
   console.log(valueInput.value)
  }
  const finalValue = (valueInput.value * chosenCurrencyRate).toFixed(2);
     comeout.innerHTML = finalValue;
-  if (valueInput.value > 0 && chosenCurrencyRate == false) {
+  if (valueInput.value > 0 && chosenCurrencyRate == true) {
    console.log(valueInput.value, chosenCurrencyRate, "if")
     const finalValue = (valueInput.value * chosenCurrencyRate).toFixed(2);
     comeout.innerHTML = finalValue;
@@ -44,7 +45,7 @@ const getComeout = (chosenCurrencyRate) => {
   } else {
     alert("Wybierz walutę i wpisz poprawną kwotę");
    console.log("dół")
-  }
+  }*/
 };
 
 currencySelector.addEventListener("change", chooseCurrency);
